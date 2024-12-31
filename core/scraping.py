@@ -12,7 +12,7 @@ def scrape_crypto_data(formatted_date):
     coins_data = []
 
     for row in soup.select('tr.coin'):
-        rank = row.select_one('td.rank')
+        index = row.select_one('td.rank')
         name = row.select_one('td.name .full-name')
         ticker = row.select_one('td.name .ticker')
         price = row.select_one('td.price')
@@ -22,7 +22,7 @@ def scrape_crypto_data(formatted_date):
         circulating_supply = row.select_one('td.circulating-supply span')
 
         coins_data.append({
-            "rank": rank.text.strip() if rank else None,
+            "index": index.text.strip() if index else None,
             "name": name.text.strip() if name else None,
             "ticker": ticker.text.strip() if ticker else None,
             "price": price.text.strip() if price else None,

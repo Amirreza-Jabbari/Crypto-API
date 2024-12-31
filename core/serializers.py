@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 class CryptoDataSerializer(serializers.Serializer):
-    rank = serializers.CharField()
+    index = serializers.CharField()
     name = serializers.CharField()
     ticker = serializers.CharField()
     price = serializers.CharField()
