@@ -7,5 +7,5 @@ class CryptoDataSerializer(serializers.Serializer):
     price = serializers.CharField()
     change_24h = serializers.CharField()
     market_cap = serializers.CharField()
-    volume = serializers.CharField()
+    volume_24h = serializers.CharField()
     circulating_supply = serializers.CharField()

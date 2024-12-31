@@ -18,7 +18,7 @@ def scrape_crypto_data(formatted_date):
         price = row.select_one('td.price')
         change_24h = row.select_one('td.change .price-change')
         market_cap = row.select_one('td.market-cap')
-        volume = row.select_one('td.volume')
+        volume_24h = row.select_one('td.volume')
         circulating_supply = row.select_one('td.circulating-supply span')
 
         coins_data.append({
@@ -28,7 +28,7 @@ def scrape_crypto_data(formatted_date):
             "price": price.text.strip() if price else None,
             "change_24h": change_24h.text.strip() if change_24h else None,
             "market_cap": market_cap.text.strip() if market_cap else None,
-            "volume": volume.text.strip() if volume else None,
+            "volume_24h": volume_24h.text.strip() if volume_24h else None,
             "circulating_supply": circulating_supply.text.strip() if circulating_supply else None,
         })
 
